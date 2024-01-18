@@ -17,7 +17,6 @@
 		3B1E57212B583C9400489589 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E57202B583C9400489589 /* DBService.swift */; };
 		3B1E57232B583CB700489589 /* PreparatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E57222B583CB700489589 /* PreparatViewModel.swift */; };
 		3B1E57252B583DE100489589 /* PreparatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E57242B583DE100489589 /* PreparatCell.swift */; };
-		3B1E57272B58431F00489589 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E57262B58431F00489589 /* SecondViewController.swift */; };
 		3B1E572A2B58448900489589 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1E57292B58448900489589 /* Differentiator */; };
 		3B1E572C2B58448900489589 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1E572B2B58448900489589 /* RxDataSources */; };
 		3B1E572F2B58449E00489589 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1E572E2B58449E00489589 /* Alamofire */; };
@@ -45,7 +44,6 @@
 		3B1E57202B583C9400489589 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		3B1E57222B583CB700489589 /* PreparatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparatViewModel.swift; sourceTree = "<group>"; };
 		3B1E57242B583DE100489589 /* PreparatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparatCell.swift; sourceTree = "<group>"; };
-		3B1E57262B58431F00489589 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3B1E57322B5920D400489589 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		3B1E57332B5920D400489589 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
 		3B1E57382B59225800489589 /* SelectedPreparatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPreparatRouter.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				3B1E56FD2B583B6A00489589 /* Application */,
 				3B1E57372B59223100489589 /* Modules */,
 				3B1E56FC2B583B5E00489589 /* Resources */,
-				3B1E57262B58431F00489589 /* SecondViewController.swift */,
 			);
 			path = BinetProject;
 			sourceTree = "<group>";
@@ -291,7 +288,6 @@
 				3B1E573C2B59225800489589 /* SelectedPreparatRouter.swift in Sources */,
 				3B1E574B2B59636300489589 /* SearchAssembly.swift in Sources */,
 				3B1E574C2B59636300489589 /* SearchViewModel.swift in Sources */,
-				3B1E57272B58431F00489589 /* SecondViewController.swift in Sources */,
 				3B1E56ED2B583B3A00489589 /* PreparatViewController.swift in Sources */,
 				3B1E57212B583C9400489589 /* DBService.swift in Sources */,
 				3B1E56E92B583B3A00489589 /* AppDelegate.swift in Sources */,
