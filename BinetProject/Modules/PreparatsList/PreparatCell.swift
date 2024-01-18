@@ -136,7 +136,7 @@ private extension PreparatCell {
         }
         
         descriptionLable.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview().inset(12)
+            make.leading.bottom.trailing.equalToSuperview().inset(12)
             make.top.equalTo(nameLable.snp.bottom).offset(6)
             make.height.equalTo(85)
         }

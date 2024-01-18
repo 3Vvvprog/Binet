@@ -57,6 +57,8 @@ class SearchViewModel: SearchViewModelProtocol {
                             break
                         }
                     }
+                }else {
+                    self.array.accept([])
                 }
             })
             .disposed(by: disposeBag)
