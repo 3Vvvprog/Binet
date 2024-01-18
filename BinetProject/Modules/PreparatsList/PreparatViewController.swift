@@ -106,7 +106,6 @@ private extension PreparatViewController {
         
         plantPreparateCollectionView.rx.willDisplayCell
             .subscribe(onNext: { [weak self] event in
-                print("count \((self?.viewModel.array.value.count)!)")
                 if event.at.item == ((self?.viewModel.array.value.count)! - 4) {
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)

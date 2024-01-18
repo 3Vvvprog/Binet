@@ -69,7 +69,6 @@ class DBService {
                         }
                         return
                     }
-                    print(data)
                     let error = response.error
                     
                     let decoder = JSONDecoder()

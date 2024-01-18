@@ -100,7 +100,6 @@ private extension SearchViewController {
         
         searchController.searchBar.rx.cancelButtonClicked
             .subscribe(onNext: { _ in
-                print("cancel")
                 self.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
@@ -147,7 +146,6 @@ private extension SearchViewController {
         
         preparateCollectionView.rx.itemSelected
             .subscribe(onNext: { event in
-                print(event.item)
                 let newViewController = SelectedPreparatAssembly().build(preparat: self.viewModel.array.value[event.item])
                 self.navigationController?.pushViewController(newViewController, animated: true)
                 
