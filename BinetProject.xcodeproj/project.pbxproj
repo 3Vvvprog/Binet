@@ -120,11 +120,9 @@
 		3B1E57302B59132800489589 /* PreparatsList */ = {
 			isa = PBXGroup;
 			children = (
-				3B1E56EC2B583B3A00489589 /* PreparatViewController.swift */,
-				3B1E56FE2B583BD700489589 /* Model.swift */,
-				3B1E57202B583C9400489589 /* DBService.swift */,
-				3B1E57222B583CB700489589 /* PreparatViewModel.swift */,
-				3B1E57242B583DE100489589 /* PreparatCell.swift */,
+				3BA2CB8F2B5A9D32009214C5 /* View */,
+				3BA2CB912B5A9D69009214C5 /* ViewModel */,
+				3BA2CB922B5A9D77009214C5 /* CustomView */,
 			);
 			path = PreparatsList;
 			sourceTree = "<group>";
@@ -152,6 +150,7 @@
 		3B1E57372B59223100489589 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2CB972B5A9DD7009214C5 /* General */,
 				3B1E57442B59634200489589 /* Search */,
 				3B1E57362B59222000489589 /* SelectedPreparat */,
 				3B1E57302B59132800489589 /* PreparatsList */,
@@ -194,12 +193,77 @@
 		3B1E57442B59634200489589 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				3B1E57452B59636300489589 /* SearchRouter.swift */,
-				3B1E57462B59636300489589 /* SearchViewController.swift */,
-				3B1E57472B59636300489589 /* SearchAssembly.swift */,
-				3B1E57482B59636300489589 /* SearchViewModel.swift */,
+				3BA2CB962B5A9DA4009214C5 /* Router */,
+				3BA2CB952B5A9D9F009214C5 /* View */,
+				3BA2CB932B5A9D8C009214C5 /* StartModule */,
+				3BA2CB942B5A9D95009214C5 /* ViewModel */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		3BA2CB8F2B5A9D32009214C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E56EC2B583B3A00489589 /* PreparatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BA2CB912B5A9D69009214C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57222B583CB700489589 /* PreparatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3BA2CB922B5A9D77009214C5 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57242B583DE100489589 /* PreparatCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		3BA2CB932B5A9D8C009214C5 /* StartModule */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57472B59636300489589 /* SearchAssembly.swift */,
+			);
+			path = StartModule;
+			sourceTree = "<group>";
+		};
+		3BA2CB942B5A9D95009214C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57482B59636300489589 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3BA2CB952B5A9D9F009214C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57462B59636300489589 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BA2CB962B5A9DA4009214C5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E57452B59636300489589 /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3BA2CB972B5A9DD7009214C5 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E56FE2B583BD700489589 /* Model.swift */,
+				3B1E57202B583C9400489589 /* DBService.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
