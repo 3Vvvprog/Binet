@@ -12,7 +12,7 @@ import RxSwift
 
 class PreparatViewController: UIViewController {
     
-    
+    let lock = NSLock()
     private let viewModel = PreparatViewModel()
     private let disposeBag = DisposeBag()
 
@@ -47,19 +47,23 @@ class PreparatViewController: UIViewController {
         navigationItem.leftBarButtonItems = makeLeftTabBarButton()
         navigationItem.rightBarButtonItems = makeRightTabBarButton()
         
-        
+       
         initialize()
+        
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        
+        
         makeConstraints()
         viewModel.moduleDidLoad()
         makeCollectionView()
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
+        
         
     }
 
@@ -106,13 +110,16 @@ private extension PreparatViewController {
         
         plantPreparateCollectionView.rx.willDisplayCell
             .subscribe(onNext: { [weak self] event in
-                if event.at.item == ((self?.viewModel.array.value.count)! - 4) {
+                
+                if event.at.item == ((self?.viewModel.array.value.count)! - 1) {
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     
+                    
                 }
+                
             })
             .disposed(by: disposeBag)
         

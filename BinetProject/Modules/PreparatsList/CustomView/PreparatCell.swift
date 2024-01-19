@@ -108,6 +108,7 @@ private extension PreparatCell {
         mainImage.image = UIImage(named: "error")
         mainImage.layer.cornerRadius = 8
         mainImage.clipsToBounds = true
+        mainImage.backgroundColor = .white
         
         mainView.addSubview(nameLable)
         mainView.addSubview(descriptionLable)

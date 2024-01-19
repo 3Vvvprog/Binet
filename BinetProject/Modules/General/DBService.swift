@@ -21,6 +21,8 @@ class DBService {
             
         
         let concurent = DispatchQueue.global(qos: .background)
+     
+        
         
         concurent.async {
             AF.request(preparationUrl)
@@ -45,7 +47,6 @@ class DBService {
                     }
                     complition(.success(plantPreparation))
                 }
-                
         }
     }
     
@@ -69,7 +70,6 @@ class DBService {
                         }
                         return
                     }
-                    let error = response.error
                     
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -90,10 +90,9 @@ class DBService {
     
     func downloadImage(from url: String, imageView: UIImageView) {
         
-        var imageUrl = URL(string: self.url + url.description)!
+        let imageUrl = URL(string: self.url + url.description)!
         getData(from: imageUrl) { data, response, error in
             guard let data = data, error == nil else { return }
-            // always update the UI from the main thread
             DispatchQueue.main.async() {
                 imageView.image = UIImage(data: data)
             }
