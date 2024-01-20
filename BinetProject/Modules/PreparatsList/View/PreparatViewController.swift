@@ -12,11 +12,12 @@ import RxSwift
 
 class PreparatViewController: UIViewController {
     
-    let lock = NSLock()
+    
     private let viewModel = PreparatViewModel()
     private let disposeBag = DisposeBag()
 
     
+    // MARK: - Private Properties
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
@@ -40,41 +41,38 @@ class PreparatViewController: UIViewController {
         return plantPreparateCollectionView
     }()
 
+    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         view.backgroundColor = .white
         navigationItem.leftBarButtonItems = makeLeftTabBarButton()
         navigationItem.rightBarButtonItems = makeRightTabBarButton()
         
-       
         initialize()
-        
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        viewModel.fetchData(id: self.viewModel.count)
-        
-        
         makeConstraints()
+        
+        // Добавление в коллекция первых 8 ячеек
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        viewModel.fetchData(id: self.viewModel.count)
+        
         viewModel.moduleDidLoad()
         makeCollectionView()
-        
-        
     }
-
-
 }
 
+// MARK: - Private Extention
 private extension PreparatViewController {
     func initialize() {
         navigationItem.titleView = titleLabel
         view.addSubview(plantPreparateCollectionView)
-        
     }
     
     func makeConstraints() {
@@ -82,22 +80,21 @@ private extension PreparatViewController {
             make.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(24)
         }
-
     }
     
     func makeCollectionView() {
         
-        
-        
+        // Создание дата сорса нашей колекции
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<Preparats> { _, collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreparatCell.identifier, for: indexPath) as! PreparatCell
             cell.configure(data: item)
             return cell
         }
         
+        // Настройка анимаций
         dataSource.animationConfiguration = .init(
-            insertAnimation: .top,
-            reloadAnimation: .top,
+            insertAnimation: .bottom,
+            reloadAnimation: .bottom,
             deleteAnimation: .left
         )
         
@@ -116,8 +113,6 @@ private extension PreparatViewController {
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
                     self?.viewModel.fetchData(id: (self?.viewModel.count)!)
-                    
-                    
                 }
                 
             })

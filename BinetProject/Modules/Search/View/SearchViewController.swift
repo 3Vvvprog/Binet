@@ -61,17 +61,16 @@ class SearchViewController: UIViewController {
         bind()
         makeCollectionView()
         
-        
-        
+    }
+    
+    deinit {
+        print("deinit")
     }
     
 }
 
 private extension SearchViewController {
     func initialize() {
-        canselButton.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
-        
-        
         view.addSubview(preparateCollectionView)
     }
     
@@ -80,10 +79,6 @@ private extension SearchViewController {
         preparateCollectionView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
         }
-    }
-    
-    @objc func didTapCancelButton() {
-        self.dismiss(animated: true)
     }
     
     func configureSearchController() {
@@ -99,8 +94,8 @@ private extension SearchViewController {
         
         
         searchController.searchBar.rx.cancelButtonClicked
-            .subscribe(onNext: { _ in
-                self.navigationController?.popViewController(animated: true)
+            .subscribe(onNext: { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
         
@@ -145,9 +140,9 @@ private extension SearchViewController {
         
         
         preparateCollectionView.rx.itemSelected
-            .subscribe(onNext: { event in
-                let newViewController = SelectedPreparatAssembly().build(preparat: self.viewModel.array.value[event.item])
-                self.navigationController?.pushViewController(newViewController, animated: true)
+            .subscribe(onNext: { [weak self] event in
+                let newViewController = SelectedPreparatAssembly().build(preparat: self!.viewModel.array.value[event.item])
+                self?.navigationController?.pushViewController(newViewController, animated: true)
                 
             })
             .disposed(by: disposeBag)

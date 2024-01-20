@@ -59,6 +59,11 @@ class SelectedPreparatViewController: UIViewController {
         makeConstraints()
     }
     
+    
+    deinit {
+        print("deinit")
+    }
+    
     func configure(data: Preparat) {
         if let name = data.name {
             self.nameLable.text = name
