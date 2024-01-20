@@ -20,7 +20,7 @@ class DBService {
         let preparationUrl = self.url + "/api/ppp/item/?id=\(id)"
             
         
-        let concurent = DispatchQueue.global(qos: .background)
+        let concurent = DispatchQueue.global(qos: .userInteractive)
      
         
         
@@ -56,7 +56,7 @@ class DBService {
         let preparationUrl = self.url + "/api/ppp/index/?search=\(search)"
             
         
-        let concurent = DispatchQueue.global(qos: .background)
+        let concurent = DispatchQueue.global(qos: .userInteractive)
         
         concurent.async {
             AF.request(preparationUrl)
